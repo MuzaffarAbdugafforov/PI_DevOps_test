@@ -27,9 +27,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
 
-    # Step 4: Set PYTHONPATH
+    # Step 4: Set PYTHONPATH using environment file
     - name: Set PYTHONPATH
-      run: echo "::add-path::$(pwd)"
+      run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
 
     # Step 5: Lint Code
     - name: Run Linter
