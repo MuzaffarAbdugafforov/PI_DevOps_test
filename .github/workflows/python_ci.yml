@@ -27,12 +27,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
 
-    # Step 4: Lint Code
+    # Step 4: Set PYTHONPATH
+    - name: Set PYTHONPATH
+      run: echo "::add-path::$(pwd)"
+
+    # Step 5: Lint Code
     - name: Run Linter
       run: |
         pylint app.py
 
-    # Step 5: Run Unit Tests
+    # Step 6: Run Unit Tests
     - name: Run Tests
       run: |
         python -m unittest discover
