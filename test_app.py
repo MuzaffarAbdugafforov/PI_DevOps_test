@@ -1,5 +1,5 @@
 import unittest
-from PI_DevOps_test.app import greet
+from app import greet  
 
 class TestGreetFunction(unittest.TestCase):
     def test_greet(self):
